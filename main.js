@@ -1,4 +1,5 @@
-const URL = "https://api.thecatapi.com/v1/images/search";
+const API_URL = "https://api.thecatapi.com/v1/images/search";
+
 /*console.log('Hello, World')
 
 const URL = "https://api.thecatapi.com/v1/images/search";
@@ -10,9 +11,9 @@ fetch(URL)
     img.src = data[0].url;
 });*/
 
-async function getURL() {
+async function reload() {
     try {
-        const response = await fetch(URL);
+        const response = await fetch(API_URL);
         const data = await response.json();
         const img = document.querySelector('img');
         img.src = data[0].url;
@@ -21,4 +22,4 @@ async function getURL() {
     }
 }
 
-getURL();
+reload();
