@@ -3,19 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
     <title>Gatos Aleatorios</title>
 </head>
 <body>
-    <h1 style="text-align: center;">Gatos Aleatorios</h1>
-    <div class="container" style="text-align: center;">
-        <img id="img1" alt="Foto  Aleatorio" width="300px" height="300px">
-        <img id="img2" alt="Foto perro Aleatorio" width="300px" height="300px">
-        <img id="img3" alt="Foto perro Aleatorio" width="300px" height="300px">
-    
-        <button onclick="reload()">Recargar</button>
-    </div>
+    <h1 style="text-align: center;">Michis APP</h1>
+    <span id="error"></span>
+    <section id="randomMichis">
+        <h2 style="text-align: center;">Gatos Aleatorios</h2>
+        <article>
+            <img id="img1" alt="Foto  Aleatorio" width="300px" height="300px">
+            <button id="btn1" onclick="saveFavouriteMichis()">Guardar michi en favoritos</button>
+        </article>
 
+        <article>
+            <img id="img2" alt="Foto  Aleatorio" width="300px" height="300px">
+            <button id="btn2" onclick="saveFavouriteMichis()">Guardar michi en favoritos</button>
+        </article>
 
+        <button onclick="loadRandomMichis()">Recargar</button>
+    </section>
+
+    <section id="favoritesMichis">
+        <h2>Michis Favoritos</h2>
+        <article>
+            <img id="img1" alt="Foto  Aleatorio" width="300px" height="300px">
+            <button>Sacar al michi de favoritos</button>
+        </article>
+
+    </section>
     <script src="main.js"></script>
 </body>
 </html>
