@@ -5,15 +5,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gatitos aleatorios</title>
-  <!-- <link rel="stylesheet" href="Style.css"> -->
+  <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-  <h1>Michis App</h1>
+  <header>
+    <h1>
+      <img src="https://cdn-icons-png.flaticon.com/512/194/194279.png" alt="Logo Michis App">
+      Michis App
+    </h1>
+    <h2>Michis aleatorios</h2>
+  </header>
+  
 
-  <!-- <span id="error"></span> -->
+  <span id="error"></span>
   
   <section id="randomMichis">
-    <h2>Michis aleatorios</h2>
     <article>
       <img id="img1" width="150" alt="Foto gatito aleatorio">
       <button id="btn1">
@@ -44,19 +50,28 @@
 
     <button onclick="loadRandomMichis()">Recargar</button>
   </section>
-  
+
   <section id="favoriteMichis">
     <h2>Michis favoritos</h2>
     <article>
-      <img id="img1" width="150" alt="Foto gatito aleatorio">
+      <img src="https://placekitten.com/300/300" alt="Foto gatito favorito">
+      <button>Sacar al michi de favoritos</button>
+    </article>
+    <article>
+      <img src="https://placekitten.com/200/300" alt="Foto gatito favorito">
       <button>Sacar al michi de favoritos</button>
     </article>
   </section>
-
+  
   <section id="uploadingMichi">
     <h2>Sube la foto de tu michi</h2>
     <form id="uploadingForm">
-        <input type="file" id="file" name="file">
+        <input type="file" id="file" name="file" accept="image/*">
+        <br>
+        <img id="preview" style="max-width: 150px; max-height: 150px; display: none; border-radius: 10px;" alt="vista previa de la imagen de tu michi">
+        <br>
+        <button type="button" id="clearPreview"> Quitar imagen</button>
+        <br>
         <button type="button" onclick="uploadMichiPhoto()">Subir foto de michi</button>
     </form>
   </section>

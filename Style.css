@@ -1,51 +1,229 @@
+/* General styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-rows: auto 1fr;
-    height: 100vh;
-  }
-  
-  h1 {
-    text-align: center;
-    background-color: #f8f8f8;
-    padding: 20px;
-    margin: 0;
-  }
-  h2 {
-    text-align: center;
-  }
-  
-  section {
-    padding: 20px;
-  }
-  
-  #randomMichis, #favoriteMichis {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
-  
-  article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 10px;
-  }
-  
-  button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fdf4e3;
+  color: #333;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff6f61;
+  color: #fff;
+  padding: 1rem;
+  margin: 0;
+}
+
+header h1 {
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+header h1 img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+header h2 {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+}
+
+/* Random Michis section */
+#randomMichis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+#randomMichis article {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+#randomMichis img {
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  height: 150px; /* Altura fija */
+  object-fit: cover; /* Ajuste para no distorsionar la imagen */
+  object-position: center; /* Centra la imagen dentro del contenedor */
+}
+
+#randomMichis button {
+  background-color: #ff6f61;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+#randomMichis button:hover {
+  background-color: #ff8569;
+  transform: scale(1.1);
+}
+
+#randomMichis button::before {
+  content: "❤️ "; /* Icono de corazón */
+}
+
+/* Button to reload michis */
+#randomMichis > button {
+  grid-column: span 4;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+#randomMichis > button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Favorite Michis section */
+#favoriteMichis {
+  padding: 1rem;
+}
+
+#favoriteMichis h2 {
+  text-align: center;
+  color: #ff6f61;
+  margin-bottom: 1rem;
+}
+
+#favoriteMichis article {
+  display: inline-block;
+  width: 150px; /* Tamaño consistente */
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+#favoriteMichis img {
+  border-radius: 10px;
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  height: 150px; /* Altura fija */
+  object-fit: cover; /* Ajuste para no distorsionar la imagen */
+  object-position: center; /* Centra la imagen dentro del contenedor */
+}
+
+#favoriteMichis button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+#favoriteMichis button:hover {
+  background-color: #c82333;
+  transform: scale(1.1);
+}
+
+#favoriteMichis button::before {
+  content: "💔 "; /* Icono de corazón roto */
+}
+
+/* Uploading Michi Section */
+#uploadingMichi {
+  text-align: center;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+}
+
+/* Título */
+#uploadingMichi h2 {
+  font-size: 1.8rem;
+  color: #ff6f61;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilos para el input de archivo */
+#uploadingForm input[type="file"] {
+  display: inline-block;
+  background-color: #ff6f61;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#uploadingForm input[type="file"]:hover {
+  background-color: #ff3f30;
+  transform: scale(1.05);
+}
+
+/* Vista previa de imagen */
+#preview {
+  max-width: 150px;
+  max-height: 150px;
+  display: none;
+  border-radius: 10px;
+  margin: 1rem auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones */
+#uploadingForm button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#uploadingForm button:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
+
+/* Botón de quitar imagen */
+#clearPreview {
+  background-color: #f44336;
+}
+
+#clearPreview:hover {
+  background-color: #e53935;
+}
+
