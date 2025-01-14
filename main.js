@@ -1,3 +1,11 @@
+// creamos la instacia de axios para hacer las peticiones a la API
+const api = axios.create({
+  baseURL: 'https://api.thecatapi.com/v1/',
+  headers: {
+    'X-API-KEY': 'live_gDwF2SmsCBk8izRETtwMpYd3mRPuOE6jT0RgAqU3uLMeDaRuBBQ77Yf9pUG4UKE1',
+    },
+});
+
 
 const API_URL_RANDOM = 'https://api.thecatapi.com/v1/images/search?limit=4';
 const API_URL_FAVORITES = 'https://api.thecatapi.com/v1/favourites';
@@ -75,8 +83,9 @@ async function loadFavouriteMichis() {
   }
 }
 
+// en esta funcion realizamos el ejemplo con axios para guardar un michi en favoritos
 async function saveFavouriteMichi(id) {
-  const res = await fetch(API_URL_FAVORITES, {
+  /*const res = await fetch(API_URL_FAVORITES, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -86,7 +95,11 @@ async function saveFavouriteMichi(id) {
       image_id: id
     }),
   });
-  const data = await res.json();
+  const data = await res.json(); */
+  const res = await api.post('/favourites',{
+    image_id: id
+    
+  });
 
   console.log('Save');
   console.log(res);
@@ -142,6 +155,7 @@ async function uploadMichiPhoto() {
     }else {
         console.log("Foto de Michi Subida con Exito :)");
         console.log({data});
+        form.reset();
     };
     console.log(data.url);
     saveFavouriteMichi(data.id);
